@@ -26,52 +26,10 @@ const styleAbout = StyleSheet.create({
     color: 'white',
     fontWeight:'25px',
     paddingBottom: '150px',
+  },  
+  buttonText:{
+    fontSize: '18px',
   },
-
-
-
-  // imgsColumn:{
-  //   flexDirection: 'row',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  //   marginBottom: 20,
-  // },
-  // imgMeio:{
-  //   flexDirection: 'row',
-  //   justifyContent: 'center',
-  //   alignItems: 'center',
-  // },
-  // image:{
-  //   width:100,
-  //   height:100,
-  //   margin: 5
-  // },
-
-  /* <Image
-        source={Marley} // Aqui você usa a variável que importou anteriormente
-        style={styleAbout.image} // Defina um estilo para a imagem
-      />
-      <Image
-        source={Marley} // Aqui você usa a variável que importou anteriormente
-        style={styleAbout.image} // Defina um estilo para a imagem
-      />
-      <Image
-        source={Marley} // Aqui você usa a variável que importou anteriormente
-        style={styleAbout.image} // Defina um estilo para a imagem
-      />
-      <Image
-        source={Marley} // Aqui você usa a variável que importou anteriormente
-        style={styleAbout.image} // Defina um estilo para a imagem
-      />
-      </View>
-      <View style={styleAbout.imgMeio}>
-      <Image
-        source={Marley} // Aqui você usa a variável que importou anteriormente
-        style={styleAbout.image} // Defina um estilo para a imagem
-      /> 
-      
-    */
-
-  
 });
+
 export default styleAbout;
