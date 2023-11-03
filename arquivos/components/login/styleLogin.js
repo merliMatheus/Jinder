@@ -14,7 +14,7 @@ const styleLogin = StyleSheet.create({
   viewMeio:{
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'center', 
 
   
   },

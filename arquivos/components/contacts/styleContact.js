@@ -5,7 +5,7 @@ const styleContact = StyleSheet.create({
     backgroundColor: '#BB2525',
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center', 
   },
   buttonSobre: {
     alignItems: 'center',
