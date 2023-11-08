@@ -1,300 +1,357 @@
-//imports principais
 import React from 'react';
-import { View, Image, Text, TouchableOpacity, FlatList } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import styleRecomendacao from './styleRecomendacao';
-export default function RecomendacaoScreen ({navigation}){
+import { StatusBar } from 'expo-status-bar';
+import { Text, View, SectionList, SafeAreaView, Image, FlatList} from 'react-native';
+import styleRecomendacao from './styleRecomendacao'; 
 
-    const goAbout = () => {
-      navigation.navigate('About')
-    }
-    const goContact = () => {
-      navigation.navigate('Contact')
-    }
-    const IMAGENS = [
-      {
-        id:1,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-      {
-        id: 2,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-      {
-        id: 3,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-  
-      {
-        id: 4,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-        
-      },
-      {
-        id: 5,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-      {
-        id: 6,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-      {
-        id: 7,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-        
-      },
-      {
-        id: 8,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-      {
-        id: 9,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-      {
-        id: 10,
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-      {
-        id: 11,
-  
-        imagens:[
-          require('./icons/tedros adanon.jpg'), 
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-          require('./icons/tedros adanon.jpg'),
-        ] 
-      },
-      {
-        id: 12,
-        imagens: [
-          require('./icons/neyma.jpg'), 
-          require('./icons/neyma.jpg'), 
-          require('./icons/neyma.jpg'),
-          require('./icons/neyma.jpg'), 
-          require('./icons/neyma.jpg')
-        ],
-      },
-  
-  
-  
-  
-    ];
-  
-    const DATA = [
-      {
-        id: 1,
-        nome: 'clodoaldo',
-        idade: ' 21',
-        distancia: '5m de distancia',
-        imagem: require('./icons/Clodo.jpeg'),
-        
-        
-      },
-      {
-        id: 2,
-        nome: 'luciano',
-        idade: ' 18',
-        distancia: '20m de distancia',
-        imagem: require('./icons/luciano.jpg'),
-      },
-      {
-        id: 3,
-        nome: 'carlos',
-        idade: ' 25',
-        distancia: '15m de distancia',
-        imagem: require('./icons/carlao.jpg'),
-      },
-      {
-        id: 4,
-        nome: 'ryan gosling',
-        idade: ' 22',
-        distancia: '12 km de distancia',
-        imagem: require('./icons/ryan.jpg'),
-        
-      },
-      {
-        id: 5,
-        nome: 'Cbum',
-        idade: ' 35',
-        distancia: '20 km de distancia',
-        imagem: require('./icons/cibam.jpg'),
-      },
-      {
-        id: 6,
-        nome: 'ernesto',
-        idade: ' 38',
-        distancia: '1 km de distancia',
-        imagem: require('./icons/ernesto.jpg'),
-      },
-      {
-        id: 7,
-        nome: 'jacinto',
-        idade: ' 28',
-        distancia: '160 km de distancia',
-        imagem: require('./icons/jacinto.jpg'),
-        
-      },
-      {
-        id: 8,
-        nome: 'nego bam',
-        idade: ' 30',
-        distancia: '8 km de distancia',
-        imagem: require('./icons/Negobam.jpg'),
-      },
-      {
-        id: 9,
-        nome: 'ednaldo pereira',
-        idade:' 45',
-        distancia: '50 km de distancia',
-        imagem: require('./icons/Ednaldo.jpg'),
-      },
-      {
-        id: 10,
-        nome: 'rodela',
-        idade: ' 55',
-        distancia: '23 km de distancia',
-        imagem: require('./icons/rodela.jpeg'),
-        
-      },
-      {
-        id: 11,
-        nome: 'tedros adhanom',
-        idade: ' 58',
-        distancia: '500m de distancia',
-        imagem: require('./icons/tedros adanon.jpg'),
-      },
-      {
-        id: 12,
-        nome: 'neyma',
-        idade: ' 24',
-        distancia: '5 km de distancia',
-        imagem: require('./icons/neyma.jpg'),
-      },
-    ];
-    
-    const Item = ({ nome, idade, distancia, imagem }) => (
-      <View style={styleRecomendacao.item}>
-  
-        <View style={styleRecomendacao.fotoContainer}>
-          <Image 
-            style={{Width: '300px', height: '500px' }}
-            source={{uri:`${imagem}`}} 
-          />
-        </View>
-  
-        <View style={styleRecomendacao.info}>
-          <Text style={{fontSize: '20px'}}>{nome}</Text>
-          <Text style={{fontSize: '20px'}}>{idade}</Text>
-        </View>
-        
-        <Text style={{paddingHorizontal: '5px', fontSize: '20px'}}>{distancia}</Text>
-      </View>
-  
+const ListaItem = ({ item }) => {
+  return (
+    <View style={styleRecomendacao.item}>
+      <Image
+        source={{
+          uri: item.uri,
+        }}
+        style={styleRecomendacao.itemPhoto}
+        resizeMode="cover"
+      />
+      
+    </View>
   );
-  const renderItem=({item})=>(
-    <Item 
-      nome={item.nome} 
-      idade={item.idade} 
-      distancia={item.distancia} 
-      imagem={item.imagem} 
-    />
-  )
-  return(
-  
-      <View style={styleRecomendacao.container}>
-  
-        <FlatList
-          ListHeaderComponent = {
-          <Text style={{  height: 55 , fontSize: '20px', fontWeight: 'bold', color: 'black'}}>
-            Pessoas que talvez você goste
-          </Text>}
-  
-          data = {DATA}
-          renderItem={renderItem} 
-          keyExtractor = {item => item.id}
-          
+};
+
+export default () => {
+  return (
+    <View style={styleRecomendacao.container}>
+      <StatusBar style="light" />
+      <SafeAreaView style={{ flex: 1 }}>
+        <SectionList
+          contentContainerStyle={{ paddingHorizontal: 10 }}          
+          sections={SECTIONS}
+          renderSectionHeader={({ section }) => (
+            <>
+              <Text style={styleRecomendacao.styleNome}>{section.nome} </Text>
+              <Text style={styleRecomendacao.styleIdade}>{section.idade}</Text>
+              <Text style={styleRecomendacao.styleDistancia}>{section.distancia}</Text>
+              {section.horizontal ? (
+                <FlatList
+                  horizontal
+                  data={section.data}                  
+                  renderItem={({ item }) => <ListaItem item={item} />}
+                  showsHorizontalScrollIndicator={false}
+                />                
+              ) : null}
+            </>
+          )}
+          renderItem={({ item, section }) => {
+            if (section.horizontal) {
+              return null;
+            }
+            return <ListaItem item={item} />;
+          }}
         />
-  
-        <SafeAreaView style={styleRecomendacao.safearea}>
-        
-          <TouchableOpacity 
-          style={styleRecomendacao.buttonSobre}  
-          onPress={() => goAbout()} >
-          <Text style={styleRecomendacao.buttonText}>SOBRE NÓS</Text>
-          
-          </TouchableOpacity> 
-  
-          <TouchableOpacity 
-          style={styleRecomendacao.buttonContatos}  
-          onPress={() => goContact()} >
-          <Text style={styleRecomendacao.buttonText}>CONTATOS</Text>
-          
-          </TouchableOpacity>
-  
-        </SafeAreaView>
-      </View>
-    );
-  }
-  
+      </SafeAreaView>
+    </View>
+  );
+};
+const SECTIONS = [
+  {
+    nome: 'clodoaldo',
+    idade: '30 anos',
+    distancia: '2m de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',        
+        uri: require('./icons/Clodo.jpeg'),
+      },
+      {
+        key: '2',        
+        uri: require('./icons/Clodo2.jpg'),
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/Clodo3.png'),
+      },
+      
+    ],
+  },
+  {
+    nome: 'Luciano',
+    idade: '18 anos',
+    distancia: '15m de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/luciano.jpg'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/luciano2.jpg'),
+      },
+      {
+        key: '4',
+        uri: require('./icons/lucianoo.jpg'),
+      },
+    ],
+  },
+  {
+    nome: 'Carlos',
+    idade: '24 anos',
+    distancia: '19m de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/carlao.jpg'),
+      },
+      {
+        key: '3',
+        uri: require('./icons/carlao2.jpg'),
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/carlao3.png'), 
+      },
+    ],
+  },
+  {
+    nome: 'ryan gosling',
+    idade: '22 anos',
+    distancia: '12 km de distancia',    
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/ryan.jpg'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/Ryan2.jpg'),
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/ryan3.jpg'),
+      },
+      {
+        key: '4',
+        uri: require('./icons/ryan4.png'),
+      },
+      {
+        key: '5',
+        uri: require('./icons/ryan5.jpg'),
+      },
+    ],
+  },
+  {
+    nome: 'Cbum',
+    idade: '35 anos',
+    distancia: '200 km de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/cbum4.jpg'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/cbum2.jpg'),
+      },
+      {
+        key: '3',
+        uri: require('./icons/cbum3.jpg'),
+      },
+      {
+        key: '4',
+        uri: require('./icons/cibam.jpg'),
+      },     
+    ],
+  },
+
+  {
+    nome: 'ernesto',
+    idade: '38 anos',
+    distancia: '1 km de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/ernesto.jpg'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/ernesto2.jpg'),      
+      },
+
+     
+    ],
+  },
+  {
+    nome: 'jacinto',
+    idade: '28 anos',
+    distancia: '160 km de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/jacinto.jpg'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/Jacinto2.jpg'),    
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/Jacinto3.jpg'),
+      },
+      
+    ],
+  },
+  {
+    nome: 'nego bam',
+    idade: '27 anos',
+    distancia: '8 km de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/Negobam.jpg'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/Negobam2.jpg'),      
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/Negobam3.jpg'),      
+      },
+     
+    ],
+  },
+  {
+    nome: 'ednaldo pereira',
+    idade:'45 anos',
+    distancia: '50 km de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/Ednaldo.jpg'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/Ednaldo2.png'),    
+      },
+      {
+        key: '3',
+        uri: require('./icons/Ednaldo3.jpeg'),
+      },
+      {
+        key: '4',
+        uri: require('./icons/Ednaldo4.jpg'),
+      },
+      {
+        key: '5',
+        uri: require('./icons/Ednaldo5.jpg'),
+      },
+    ],
+  },
+  {
+    nome: 'Andressa Urach',
+    idade: '17 anos',
+    distancia: '900m de distancia!',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/Andressa1.png'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/Andressa2.jpg'),      
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/Andressa3.jpg'),
+      },
+      
+    ],
+  },
+  {
+    nome: 'carminha',
+    idade: '42 anos',
+    distancia: '8km de distancia',
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/carminha.png'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/carminha2.png'),      
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/carminha3.png'),
+      },
+    ],
+  },
+  {
+    nome: 'tedros adhanom',
+    idade: '32 anos',
+    distancia: '500m de distancia', 
+    horizontal: true,
+    data: [
+      {
+        key: '1',
+        uri: require('./icons/tedros adanom.png'),
+      },
+      {
+        key: '2',
+        uri: require('./icons/tedros adanom2.jpg'),     
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/tedros adanom3.jpg'),
+      },
+    ],
+  },
+  {
+    nome: 'neyma',
+    idade: '20 anos',
+    distancia: '5 km de distancia', 
+    horizontal: true,
+    data: [
+      {
+        key: '2',
+        uri: require('./icons/neyma2.jpg'),     
+      },
+
+      {
+        key: '3',
+        uri: require('./icons/neyma3.jpg'),
+      },
+      {
+        key: '4',
+        uri: require('./icons/neyma4.jpg'),
+      },
+      {
+        key: '5',
+        uri: require('./icons/neyma5.jpeg'),
+      },
+      {
+        key: '1',
+        uri: require('./icons/neyma.jpg'),
+      },
+    ],
+  },
+];
+
