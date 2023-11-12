@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View, Text, TouchableOpacity, TextInput, } from 'react-native';
+import { View, Text, TouchableOpacity, TextInput, Image} from 'react-native';
 import styleCadastro from './styleCadastro';
 
 export default function CadastroScreen ({navigation}) {
@@ -45,6 +45,9 @@ export default function CadastroScreen ({navigation}) {
             <Text style={styleCadastro.buttonText}>CADASTRAR-SE</Text>
   
           </TouchableOpacity> 
+
+          
+         
         
         </View>
       </View>
