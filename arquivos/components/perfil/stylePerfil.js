@@ -2,38 +2,92 @@ import { StyleSheet } from 'react-native';
 const stylePerfil = StyleSheet.create({
 //fundo tela
   container: {
-    backgroundColor: '#BB2525',
+    backgroundColor: '#D3D3D3',
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  },  
+  cabecalho:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',        
+  },
+  cardTop:{
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingBottom: '10px',
 
   },
-  title: {
-    fontSize: '35px',
-    color: 'white',
-    fontWeight:'30px',
-    paddingBottom: '200px',
+   user:{
+    display: 'flex',
+    flexDirection: 'inline',    
+    alignItems:'center' ,
+    justifyContent: 'center',
+    marginTop: '40px', 
+    
   },
-  buttonRecomendacao: {
+  infoUser:{ 
+    fontSize:'25px',
+    fontWeight: 'bold',
+
+  },
+  userImage:{
+    width: '200px',
+    height:'200px',
+    borderRadius: '50%',
+    
+  },   
+  planos:{
+    backgroundColor: '#DCDCDC',
+    borderColor: 'black',
+    borderWidth: '1.5px',
+    borderRadius: '10px',     
+    marginHorizontal: '5px',    
+    paddingHorizontal: '20px',
+    flex: 1,
+  },
+  info:{
+    flexDirection: 'row',   
+    justifyContent: 'space-around',
+    paddingTop: '30px',
+    paddingBottom: '30px',
+  },
+  upgradeButton:{
     alignItems: 'center',
-    backgroundColor: 'white',
-    paddingHorizontal: '40px',
-    padding: '10px',
+    backgroundColor: 'black',
+    paddingHorizontal: '22px',
+    height:'41px',
+    paddingTop: '11px',
     borderRadius: '25px',
-    marginTop:'95px',
     margin: '10px',
-},
-buttonDescubra: {
-  alignItems: 'center',
-  backgroundColor: 'white',
-  paddingHorizontal: '25px',
-  padding: '10px',
-  borderRadius: '25px',
-  marginBottom: '10px',
-},
-//texto dentro do botão
-  buttonText:{
-    fontSize: '18px',
   },
+  buttonText:{
+    color:'white',
+    fontWeight:'bold',
+  },
+  infoTitle:{
+    marginLeft:'8px'
+  },
+  likeTitle:{
+    color: 'blue',
+    fontWeight: 'bold',
+  },
+  boostTitle:{
+    color: 'purple',
+    fontWeight: 'bold',
+  },
+  assinaturaTitle:{
+    color: 'orange',
+    fontWeight: 'bold',
+    marginLeft:'5px'
+  }, 
+  cardTop: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',  
+  },
+  cardMeio: {
+
+  },
+  cardBottom: {
+
+  },
+
 });
 export default stylePerfil;

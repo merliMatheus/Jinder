@@ -12,8 +12,7 @@ const ListaItem = ({ item }) => {
         }}
         style={styleRecomendacao.itemPhoto}
         resizeMode="cover"
-      />
-      
+      />      
     </View>
   );
 };
@@ -28,7 +27,7 @@ export default () => {
           sections={SECTIONS}
           renderSectionHeader={({ section }) => (
             <>
-              <Text style={styleRecomendacao.styleNome}>{section.nome} </Text>
+              <Text style={styleRecomendacao.styleNome}>{section.nome} </Text> 
               <Text style={styleRecomendacao.styleIdade}>{section.idade}</Text>
               <Text style={styleRecomendacao.styleDistancia}>{section.distancia}</Text>
               {section.horizontal ? (
